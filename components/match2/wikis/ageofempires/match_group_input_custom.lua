@@ -320,6 +320,13 @@ function CustomMatchGroupInput._mapInput(match, mapIndex)
 		displayname = map.mapDisplayName,
 		mapmode = map.mode
 	}
+
+	if map.date  then
+		local dateInfo = MatchGroupInput.readDate(map.date --[[@as string]])
+		map.date = Table.extract(dateInfo, 'date')
+		Table.mergeInto(map.extradata, dateInfo)
+	end
+
 	map.game = match.game
 	map.mode = match.mode
 

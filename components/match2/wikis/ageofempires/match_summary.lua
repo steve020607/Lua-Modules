@@ -79,6 +79,13 @@ function CustomMatchSummary.createBody(match)
 			game = match.game,
 			soloMode = CustomMatchSummary._isSolo(match)
 		})
+
+		if game.date ~= match.date then
+			game.dateIsExact = game.extradata.dateexact
+			body:addRow(MatchSummary.Row():addElement(
+				DisplayHelper.MatchCountdownBlock(game)
+			))
+		end
 		body:addRow(row)
 	end)
 
