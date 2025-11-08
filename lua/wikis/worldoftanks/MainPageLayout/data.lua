@@ -72,6 +72,11 @@ local CONTENT = {
 		padding = true,
 		boxid = 1508,
 	},
+	specialEvents = {
+		noPanel = true,
+		body = '{{Liquipedia:Special Event}}',
+		boxid = 1516,
+	},
 }
 
 return {
